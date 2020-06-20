@@ -7,7 +7,7 @@ export default class Clock extends Component {
     componentDidMount() {
         this.countId = setInterval(() => {
             const date = new Date();
-            const hourse = date.getHours() + this.props.clock.zone;
+            const hourse = date.getHours() + (date.getTimezoneOffset() / 60) + this.props.clock.zone;
             const minutes = date.getMinutes();
             const seconds = date.getSeconds();
 
